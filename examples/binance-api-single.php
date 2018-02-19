@@ -94,6 +94,7 @@ class Binance {
 			$opt['http']['content'] = $postdata;
 		}
 		$context = stream_context_create($opt);
+// 		printf("query=%s\n", $query);
 		return json_decode(file_get_contents($endpoint, false, $context), true);
 	}
 	private function order_test($side, $symbol, $quantity, $price, $type = "LIMIT", $flags = []) {
